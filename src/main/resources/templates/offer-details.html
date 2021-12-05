@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="/fragments/commons::head"></head>
+<body>
+<header th:replace="/fragments/commons::navigation"></header>
+
+<div class="container" style="margin-top: 8rem;">
+    <div class="row mx-auto d-flex flex-row justify-content-center">
+        <div th:object="${offer}" class="col-md-3 col-sm-6 col-lg-6 card-margin p-0">
+            <div class="card-sl">
+                <div class="card-image">
+                    <img th:src="*{pictureUrl}"/>
+                </div>
+                <div class="card-heading">
+                    <h3 th:text="*{name}">Heading</h3>
+                    <div class="card-text">
+                        <h5 th:text="|Price: *{price}lv|" class="details-price"></h5>
+                    </div>
+                    <h6 style="margin-top: 5%" th:text="'In category: ' + *{category.name()}">Category</h6>
+                    <h6 th:text="|Seller: *{sellerName}|">Seller name</h6>
+                    <h6 th:text="|Phone: *{phone}|">Phone</h6>
+                    <h6 th:text="|Location: *{city}, *{country}|">Category</h6>
+                    <h6 style="margin-top: 8%">Description:</h6>
+                    <p class="card-text" th:text="*{description}">Item Description</p>
+                </div>
+
+                <div class="card-body card-body-background" th:if="*{canDeleteAndUpdate}">
+
+                    <a class="btn btn-link" th:href="@{/offers/{id}/edit(id=*{id})}">Edit</a>
+
+                    <form th:action="@{/offers/{id}(id=*{id})}" th:method="delete">
+                        <input type="submit" class="btn btn-link" value="Delete"/>
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

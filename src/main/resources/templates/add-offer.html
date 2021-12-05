@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/commons::head"></head>
+<body>
+<header th:replace="/fragments/commons::navigation"></header>
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="margin-top: 3rem; margin-bottom: 2rem"
+                     id="form-section">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Add Offer</h3>
+                        <form th:action="@{/offers/add}" th:method="POST" th:object="${offerAddBindingModel}"
+                              enctype="multipart/form-data">
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="name">Name</label>
+                                        <input type="text"
+                                               id="name"
+                                               max="3" min="20"
+                                               name="name"
+                                               class="form-control form-control-lg"
+                                               th:field="*{name}"
+                                               th:errorclass="is-invalid"/>
+                                        <p class="invalid-feedback">The name must be between 3 and 20 characters!</p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="category">Category</label>
+                                        <select name="category" id="category" class="form-control"
+                                                th:errorclass="is-invalid">
+
+                                            <option value="">Select category</option>
+                                            <option value=""
+                                                    th:each="t : ${T(com.project.kupuvalnik.models.entity.enums.OfferCategoryEnum).values()}"
+                                                    th:text="${t}" th:value="${t}" th:selected="${t} == *{category}">
+                                                Category
+                                            </option>
+                                        </select>
+                                        <p class="invalid-feedback">
+                                            Please select a category!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row justify-content-center">
+
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="phone">Phone</label>
+                                        <input type="text"
+                                               id="phone"
+                                               name="phone"
+                                               th:errorclass="is-invalid"
+                                               class="form-control form-control-lg"
+                                               th:value="*{phone}"/>
+                                        <p class="invalid-feedback">
+                                            Phone must be at least 10 symbols!
+                                        </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="price">Price</label>
+                                        <input type="number"
+                                               id="price"
+                                               step="any"
+                                               name="price"
+                                               th:errorclass="is-invalid"
+                                               class="form-control form-control-lg"
+                                               th:value="*{price}"/>
+                                        <p class="invalid-feedback">
+                                            Price must be 0 or a positive number.
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row justify-content-center">
+
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="city">City</label>
+                                        <input type="text"
+                                               id="city"
+                                               name="city"
+                                               th:errorclass="is-invalid"
+                                               class="form-control form-control-lg"
+                                               th:value="*{city}"/>
+                                        <p class="invalid-feedback">
+                                            Enter valid city!
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="country">Country</label>
+                                        <input type="text"
+                                               id="country"
+                                               name="country"
+                                               th:errorclass="is-invalid"
+                                               class="form-control form-control-lg"
+                                               th:value="*{country}"/>
+                                        <p class="invalid-feedback">
+                                            Enter valid country!
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline image-input">
+                                        <label class="form-label" for="image">Image</label>
+                                        <input th:field="*{picture}" th:errorclass="is-invalid" name="image"
+                                               id="image" type="file" class="form-control form-control-lg">
+                                        <p class="invalid-feedback">
+                                            Image is required!
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="description">Description</label>
+                                        <textarea class="form-control form-control-lg"
+                                                  style="width: 41rem;"
+                                                  th:errorclass="is-invalid"
+                                                  name="description"
+                                                  id="description"
+                                                  rows="8"
+                                                  placeholder="Write a short description for your item..."
+                                                  th:field="*{description}">
+                                        </textarea>
+
+
+                                        <p class="invalid-feedback">
+                                            Description must be at least 15 characters long!
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="mt-4 pt-2 text-center">
+                                    <input class="btn btn-primary btn-lg button" type="submit"
+                                           value="Submit Offer"/>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

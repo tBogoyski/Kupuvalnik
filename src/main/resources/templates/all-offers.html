@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="/fragments/commons::head"></head>
+<body>
+<header th:replace="/fragments/commons::navigation"></header>
+
+<div class="container" style="margin-top:50px;">
+    <h2 class="text-center text-white all-offers-head-text">All offers</h2>
+
+    <div class="row mx-auto d-flex flex-row justify-content-center">
+        <div th:each="o : ${offers}" th:object="${o}" class="col-md-3 col-sm-6 col-lg-3 card-margin p-0">
+            <div class="card-sl">
+                <div class="card-image">
+                    <img th:src="*{imageUrl}"/>
+                </div>
+                <div class="card-heading">
+                    <h3 th:text="*{name}">Heading</h3>
+                    <h6 style="margin-top: 5%" th:text="'In category: ' + *{category.name()}">Category</h6>
+                    <h6 th:text="|Location: *{city}, *{country}|">Category</h6>
+                </div>
+                <div class="card-text">
+                    <h5 th:text="|Price: *{price}lv|"></h5>
+                </div>
+                <a th:href="@{/offers/details/{id}(id=*{id})}" class="card-button"> Details</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

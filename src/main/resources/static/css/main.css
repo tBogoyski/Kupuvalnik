@@ -1,0 +1,222 @@
+
+:root {
+    --background: #000B29;
+    --form-background: #F8F5F2;
+    --nav-and-elements: #EDB83D;
+    --button-red: #D70026;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#nav-bar {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.button {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-color: var(--form-background) !important;
+    color: black !important;
+}
+
+#navbar-separation {
+    margin-left: auto;
+}
+
+.nav-bar-font-size {
+    font-size: 19px;
+}
+
+#form-section {
+    color: black;
+    background-color: var(--form-background);
+    border-radius: 15px;
+
+}
+
+
+.card-color {
+    background-color: var(--form-background) !important;
+    color: var(--background);
+}
+
+.all-offers-head-text {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+#stats-cards {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.stats-ul-position {
+    margin-left: 2rem;
+}
+
+/*from maker*/
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+
+/*card styles*/
+
+/* Card Styles */
+
+.card-sl {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-image img {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0;
+}
+
+.card-action {
+    position: relative;
+    float: right;
+    margin-top: -25px;
+    margin-right: 20px;
+    z-index: 2;
+    color: #E26D5C;
+    background: #fff;
+    border-radius: 100%;
+    padding: 15px;
+    font-size: 15px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-action:hover {
+    color: #fff;
+    background: #E26D5C;
+    -webkit-animation: pulse 1.5s infinite;
+}
+
+.card-heading {
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.card-text {
+    padding: 10px 15px;
+    background: #fff;
+    font-size: 14px;
+    color: #636262;
+}
+
+.card-button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #1F487E;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+}
+
+.card-button:hover {
+    text-decoration: none;
+    background-color: #1D3461;
+    color: #fff;
+
+}
+
+
+@-webkit-keyframes pulse {
+    0% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+
+    70% {
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+    }
+
+    100% {
+        -moz-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+    }
+}
+
+.card-margin {
+    margin: 1.25rem;
+}
+
+.details-price {
+    margin-left: 75%;
+    margin-bottom: -4%;
+}
+
+.card-body-background {
+    background-color: white !important;
+}
+
+input {
+    text-decoration: none !important;
+}
+
+.image-input {
+    margin-left: -30%;
+    margin-right: -30%;
+}
+
+
+.anonymous-index-logo {
+    margin-top: 22%;
+}
+
+.index-image {
+    height: 45%;
+    width: 45%;
+    margin-left: 25%;
+}
+
+.authorize-to-continue-text {
+    margin-left: 50%;
+}
+

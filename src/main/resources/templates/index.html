@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::navigation"></header>
+
+<div class="container anonymous-index-logo" sec:authorize="!isAuthenticated()">
+    <img src="https://res.cloudinary.com/kupuvalnik-cloud/image/upload/v1637184175/download_js5bzn.svg"
+         alt="Kupuvalnik logo" class="index-image">
+    <p class="container" style="margin-left: 50%">Please login or register to continue</p>
+</div>
+
+
+<div class="container" sec:authorize="isAuthenticated()" style="margin-top: 9rem">
+
+    <div class="container-fluid" style="margin-bottom: 3%">
+        <h3 class="text-center mt-5" style="color: black!important;">Welcome to the Kupuvalnik,
+            <span sec:authentication="name">Username</span>.
+        </h3>
+    </div>
+
+    <section class="vh-100 gradient-custom" style="margin-top: -7%;">
+        <div class="container py-5 h-100">
+            <div class="row justify-content-center align-items-center h-100">
+                <div class="col-12 col-lg-12 col-xl-12">
+                    <div class="card shadow-2-strong card-registration" id="form-section">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Latest Added Offers</h3>
+                            <div class="row mx-auto d-flex flex-row justify-content-center">
+                                <div th:each="o : ${latestOffers}" th:object="${o}"
+                                     class="col-md-3 col-sm-6 col-lg-3 card-margin p-0">
+                                    <div class="card-sl">
+                                        <div class="card-image">
+                                            <img th:src="*{imageUrl}"/>
+                                        </div>
+                                        <div class="card-heading">
+                                            <h3 th:text="*{name}">Heading</h3>
+                                            <h6 style="margin-top: 5%" th:text="'In category: ' + *{category.name()}">
+                                                Category</h6>
+                                            <h6 th:text="|Location: *{city}, *{country}|">Category</h6>
+                                        </div>
+                                        <div class="card-text">
+                                            <h5 th:text="|Price: *{price}lv|"></h5>
+                                        </div>
+                                        <a th:href="@{/offers/details/{id}(id=*{id})}" class="card-button"> Details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</div>
+
+
+</body>
+</html>

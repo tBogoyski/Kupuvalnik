@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="fragments/commons::head"></head>
+<body>
+<header th:replace="fragments/commons::navigation"></header>
+
+<div class="text-center" style="margin-top: 5rem; margin-bottom: 2rem"><h1>Application Statistics</h1></div>
+<div class="row" id="stats-cards">
+    <div class="col-sm-6">
+        <div class="card card-color">
+            <div class="card-body">
+                <h3 class="card-title text-center">Requests</h3>
+                <ul class="list-group list-group-flush stats-ul-position">
+                    <li class="justify-content-center">
+                        <h5>Anonymous Requests: <span th:text="${stats.getAnonRequest()}">anon requests</span></h5>
+                    </li>
+                    <li>
+                        <h5>Auth Requests: <span th:text="${stats.getAuthRequest()}">auth requests</span></h5>
+                    </li>
+                    <li>
+                        <h5>Total Requests: <span th:text="${stats.getTotalRequests()}">total requests</span></h5>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card card-color">
+            <div class="card-body">
+                <h3 class="card-title text-center">Responses</h3>
+                <ul class="list-group list-group-flush stats-ul-position">
+                    <li class="justify-content-center">
+                        <h5>Anonymous Responses: <span th:text="${stats.getAuthResponse()}">anon response</span></h5>
+                    </li>
+                    <li>
+                        <h5>Auth Response: <span th:text="${stats.getAnonResponse()}">auth response</span></h5>
+                    </li>
+                    <li>
+                        <h5>Total Responses: <span th:text="${stats.getTotalResponse()}">total response</span></h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

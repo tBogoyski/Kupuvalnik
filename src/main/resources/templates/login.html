@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/commons::head"></head>
+<body>
+<header th:replace="/fragments/commons::navigation"></header>
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" id="form-section">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center">Login</h3>
+                        <form th:action="@{/users/login}" th:method="post">
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="username">Username</label>
+                                        <input type="text"
+                                               id="username"
+                                               name="username"
+                                               min="4" max="20"
+                                               class="form-control form-control-lg"
+                                               th:value="${username}"/>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password"
+                                               name="password"
+                                               id="password"
+                                               class="form-control form-control-lg"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p th:if="${bad_credentials}" class="errors alert alert-danger">
+                                Invalid username or password.
+                            </p>
+
+                            <div class="row">
+
+                                <div class="mt-4 pt-2 text-center">
+                                    <input class="btn btn-primary btn-lg button" type="submit" value="Login"/>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
