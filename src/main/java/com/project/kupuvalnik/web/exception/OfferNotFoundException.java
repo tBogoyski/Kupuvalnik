@@ -9,4 +9,8 @@ public class OfferNotFoundException extends RuntimeException {
         super("Offer with id " + offerId + " is not found!");
         this.id = offerId;
     }
+
+    public Long getId() {
+        return id;
+    }
 }
