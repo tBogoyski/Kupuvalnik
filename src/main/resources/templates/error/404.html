@@ -1,14 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="fragments/commons::head"></head>
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/404.css">
+    <title>Kupuvalnik-404</title>
+</head>
 <body>
-<header th:replace="fragments/commons::navigation"></header>
-
-<div class="container">
-    <h1 style="margin-top: 10rem;">My custom 404 page</h1>
+<section class="error-container" style="margin-top: 15%; margin-bottom: -4%">
+    <span>4</span>
+    <span><span class="screen-reader-text">0</span></span>
+    <span>4</span>
+</section>
+<div class="link-container">
+    <a th:href="@{/}" class="more-link">Home Page</a>
 </div>
-
 </body>
 </html>
