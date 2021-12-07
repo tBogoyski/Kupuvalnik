@@ -1,21 +1,57 @@
-<!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
-<head th:replace="/fragments/commons::head"></head>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/under-construction.css">
+    <title>Under Construction</title>
+</head>
 <body>
-<header th:replace="/fragments/commons::navigation"></header>
-<div class="container">
 
-
-    <img src="https://res.cloudinary.com/kupuvalnik-cloud/image/upload/v1638907704/comming-soon_h1db95.svg"
-         alt="Image not working..." id="coming-soon-text">
+<div id="content">
+    <h1>< building /></h1>
+    <p>Working day and night!</p>
 </div>
-<div class="container">
-    <div class="text-center">
-
-        <a th:href="@{/}" class="btn btn-dark">Home</a>
+<div id="outerCraneContainer">
+    <div class="buildings">
+        <div></div>
+        <div class="1"></div>
+        <div class="2"></div>
+        <div class="3"></div>
+        <div class="4"></div>
     </div>
-
+    <div class="crane craneThree">
+        <div class="line lineOne"></div>
+        <div class="line lineTwo"></div>
+        <div class="line lineThree"></div>
+        <div class="stand"></div>
+        <div class="weight"></div>
+        <div class="cabin"></div>
+        <div class="arm"></div>
+    </div>
+    <div class="crane craneTwo">
+        <div class="line lineOne"></div>
+        <div class="line lineTwo"></div>
+        <div class="line lineThree"></div>
+        <div class="stand"></div>
+        <div class="weight"></div>
+        <div class="cabin"></div>
+        <div class="arm"></div>
+    </div>
+    <div class="crane craneOne">
+        <div class="line lineOne"></div>
+        <div class="line lineTwo"></div>
+        <div class="line lineThree"></div>
+        <div class="stand"></div>
+        <div class="weight"></div>
+        <div class="cabin"></div>
+        <div class="arm"></div>
+    </div>
 </div>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" id="license"><img
+        alt="Creative Commons License" style="border-width:0"
+        src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
 </body>
 </html>
