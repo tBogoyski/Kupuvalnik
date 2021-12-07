@@ -61,9 +61,9 @@
                             Profile
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">My Offers</a></li>
-                            <li><a class="dropdown-item" href="#">Favorites</a></li>
-                            <li><a class="dropdown-item" href="#">Profile Overview</a></li>
+                            <li><a class="dropdown-item" th:href="@{/users/owned}">My Offers</a></li>
+                            <li><a class="dropdown-item" th:href="@{/users/favorites}">Favorites</a></li>
+                            <li><a class="dropdown-item" th:href="@{/users/profile}">Profile Overview</a></li>
                         </ul>
                     </li>
                     <li class="nav-item" sec:authorize="isAuthenticated()" style="margin-right: 2rem">
