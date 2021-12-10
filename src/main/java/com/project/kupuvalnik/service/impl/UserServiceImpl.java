@@ -26,7 +26,7 @@ import java.util.Set;
 public class UserServiceImpl implements UserService {
 
     //20 minutes = 20 * 60000
-    //5 sec = 5000
+    //3 sec = 3000
     private static final long MAX_INACTIVE_SESSION_TIME = 20 * 60000;
 
     private final UserRepository userRepository;
