@@ -12,6 +12,7 @@ public class MessageEntity extends BaseEntity {
     private String message;
     private UserEntity sender;
     private UserEntity reciever;
+    //hello
 
     public MessageEntity() {
     }
